@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage ('Clone') {
             steps {
-                git branch: 'dev', url: "https://github.com/careem111/vlx2-selfnodes.git"
+                git branch: 'main', url: "https://github.com/careem111/vlx2-selfnodes.git"
             }
         }
         stage ('Terraform init'){
