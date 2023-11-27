@@ -17,9 +17,9 @@ module "eks_self_managed_node_group" {
   desired_capacity = 3
   min_size         = 2
   max_size         = 3
-  subnets          = [data.aws_eks_cluster.vlx-eks.pub_subnet_1_id,data.aws_eks_cluster.vlx-eks.pub_subnet_2_id]
+  subnets          = [data.aws_eks_cluster.vlx-eks.vpc_config[0]]
   key_name = var.ssh-key
-  security_group_ids = [data.aws_eks_cluster.vlx-eks.security_group_ids.id]
+  security_group_ids = [data.aws_eks_cluster.vlx-eks.vpc_config[1]]
 
   node_labels = {
       "node.kubernetes.io/node-group" = "node-group-a"
