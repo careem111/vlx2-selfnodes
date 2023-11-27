@@ -18,8 +18,9 @@ module "eks_self_managed_node_group" {
   min_size         = 2
   max_size         = 3
   subnets          = data.aws_eks_cluster.vlx-eks.vpc_config[0].subnet_ids
+  #subnets called from the already created eks_cluster
+  # refer to https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/eks_cluster
   key_name = var.ssh-key
-  # security_group_ids = data.aws_eks_cluster.vlx-eks.vpc_config[1].security_group_ids
 
   node_labels = {
       "node.kubernetes.io/node-group" = "node-group-a"
