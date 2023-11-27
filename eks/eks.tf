@@ -40,7 +40,7 @@ module "eks_cluster_infra" {
 
 
 module "eks_self_managed_node_group" {
-  source = "github.com/aws-samples/amazon-eks-self-managed-node-group//?ref=v0.0.1"
+  source = "github.com/careem111/amazon-eks-self-managed-node-group-modules//eks?ref=v0.0.1"
 
   eks_cluster_name = var.eks_cluster_name
   version = "1.26"
