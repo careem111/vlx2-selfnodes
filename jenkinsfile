@@ -7,12 +7,12 @@ pipeline{
     stages{
         stage ('Clone') {
             steps {
-                git branch: 'dev', url: "https://github.com/careem111/aws-vlx2-infra.git"
+                git branch: 'dev', url: "https://github.com/careem111/vlx2-selfnodes.git"
             }
         }
         stage ('Terraform init'){
             steps {
-                dir("krm-eks/eks/") {
+                dir("eks/") {
                         withAWS(credentials: 'aws-kodekloud', region: 'us-east-1'){
                             sh 'terraform init'
                         }
