@@ -23,7 +23,7 @@ pipeline{
             steps {
                 dir("eks/") {
                     withAWS(credentials: 'aws-kodekloud', region: 'us-east-1'){
-                        sh 'terraform destroy --auto-approve'
+                        sh 'terraform apply --auto-approve'
                     }
                     }
                 }

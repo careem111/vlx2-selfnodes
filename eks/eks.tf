@@ -7,7 +7,9 @@ data "aws_eks_cluster" "vlx-eks" {
 
 
 module "eks_self_managed_node_group" {
-  source = "github.com/aws-samples/amazon-eks-self-managed-node-group"
+  source = "github.com/careem111/amazon-eks-self-managed-node-group-modules//modules/eks?ref=v0.1"
+  
+  #"github.com/aws-samples/amazon-eks-self-managed-node-group"
   
  
   #"github.com/careem111/amazon-eks-self-managed-node-group-modules//modules/eks?ref=v0.1"
