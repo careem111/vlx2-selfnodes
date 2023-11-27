@@ -17,7 +17,7 @@ module "eks_self_managed_node_group" {
   desired_capacity = 3
   min_size         = 2
   max_size         = 3
-  subnets          = [data.aws_eks_cluster.vlx-eks.vpc_config[0].subnet_ids[0],data.aws_eks_cluster.vlx-eks.vpc_config[0].subnet_ids[1],]
+  subnets          = data.aws_eks_cluster.vlx-eks.vpc_config[0].subnet_ids
   key_name = var.ssh-key
   security_group_ids = [data.aws_eks_cluster.vlx-eks.vpc_config[1].security_group_ids]
 
